@@ -24,9 +24,9 @@
         <tbody>
           <% @mails.each do |mail, filename| %>
             <tr class="mail">
-              <td><%= mail.from.join(', ') %></td>
-              <td><%= mail.to.join(', ') %></td>
-              <td><%= mail.cc.try(:join, ', ')%></td>
+              <td><%= Array.wrap(mail.from).join(', ') %></td>
+              <td><%= Array.wrap(mail.to).join(', ') %></td>
+              <td><%= Array.wrap(mail.cc).join(', ') %></td>
               <td>
                 <%= mail.subject %>
               </td>
